@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import './globals.css';
+import Header from '@/components/layout/header';
+import { cn } from '@/utils/lib/tailwind';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -25,8 +27,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pl">
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				{children}
+			<body className={cn(geistSans.variable, geistMono.variable, 'bg-foreground antialiased')}>
+				<Header />
+				<main>{children}</main>
 			</body>
 		</html>
 	);
