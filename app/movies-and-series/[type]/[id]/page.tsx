@@ -1,13 +1,13 @@
 type TComponentProps = {
-	params: {
+	params: Promise<{
 		type: string;
 		id: string;
-	};
+	}>;
 };
 
-export default function MoviesAndSeriesPage({
-	params: { type, id },
-}: TComponentProps) {
+export default async function MoviesAndSeriesPage({ params }: TComponentProps) {
+	const { type, id } = await params;
+
 	return (
 		<article>
 			<section>
