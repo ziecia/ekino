@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
 	darkMode: ['class'],
@@ -22,6 +23,9 @@ export default {
 				// toXl: {
 				// 	max: '1199px'
 				// }
+			},
+			fontFamily: {
+				poppins: ["var(--font-poppins)", ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				background: 'var(--background)',
