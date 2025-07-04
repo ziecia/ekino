@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
 export const generateMetadata = async ({
 	params,
@@ -18,6 +19,10 @@ type TComponentProps = {
 
 export default async function SearchPage({ params }: TComponentProps) {
 	const { slug } = await params;
+
+	if (slug !== undefined && slug.length > 1) {
+		redirect('/');
+	}
 
 	return (
 		<article>
