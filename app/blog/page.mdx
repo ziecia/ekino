@@ -1,0 +1,72 @@
+import { Button } from '@/components/ui/button';
+
+export const metadata = {
+    author: 'Ireneusz Zięcina',
+    title: 'MDX PAGE'
+}
+
+export const year = 2025;
+
+export function Random() {
+    // Nie działa tutaj context przeglądarkowy, czyli np. window...
+    const random = Math.random();
+    return (random * 100).toFixed(2);
+}
+
+<section className={'container'}>
+    Pogrubiona **czcionka**, \
+    Pochylona *czcionka*.
+
+    Cytowanie:
+    > Block quote
+
+    Tak się tworzy listę ul:
+    * Jeden
+    * Dwa
+    * Trzy
+
+    Tak się tworzy listę ol:
+    1. Jeden
+    2. Dwa
+    3. Trzy
+
+    Link z tekstem:
+    [Next.js](https://nextjs.org)
+    \
+    \
+    Import obrazka z atrybutem ALT:
+    ![Baner](/banner_ekino.jpg)
+
+    ***
+
+    Tag pre - umieszczanie kodu:
+    ```ts
+        function testABC() {
+            console.log('abc');
+        }
+    ```
+
+    Fragment kodu Inline: \
+    `console.log('test')`
+
+    {/* Komentarze robimy w ten sposób */}
+
+    Użycie funkcji w MDX: \
+    Randomowa liczba: {Random()}
+
+    Użycie zmiennej prywatnej: \
+    Aktualnie mamy rok: {year}
+
+
+    Użycie tagu HTML w MDX np. Button: \
+    <Button>Start</Button>
+
+    Test nowych linii: \
+    Nowa linia przy pomocy znaku `\` możliwa jest tylko wtedy gdy poniżej znajduje się jakiś tekst \
+    np. taki :)
+
+    Jeżeli poniżej nie ma tekstu a chcemy zrobić odstęp musimy użyć `<br />`
+
+    <br />
+    <br />
+</section>

@@ -1,4 +1,12 @@
 import type { NextConfig } from 'next';
+import nextMDX from '@next/mdx';
+
+const withMDX = nextMDX(
+	{
+		options: {
+		}
+	}
+)
 
 const nextConfig: NextConfig = {
 	images: {
@@ -10,6 +18,10 @@ const nextConfig: NextConfig = {
 			},
 		],
 		deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+	},
+	pageExtensions: ['mdx', 'ts', 'tsx'],
+	experimental: {
+		mdxRs: true
 	},
 	async redirects() {
 		return [
@@ -32,4 +44,4 @@ const nextConfig: NextConfig = {
 	}
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);
