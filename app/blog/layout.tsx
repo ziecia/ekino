@@ -10,5 +10,9 @@ export type TProps = {
 };
 
 export default function BlogLayout({ children }: TProps) {
-	return <div className={'prose prose-invert xl:prose-xl'}>{children}</div>;
+	return (
+		<div className={'prose prose-invert mx-auto xl:prose-xl'}>
+			{children}
+		</div>
+	);
 }
